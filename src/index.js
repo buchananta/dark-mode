@@ -4,12 +4,16 @@ import axios from "axios";
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
-
+import useLocalStorage from "./hooks/useLocalStorage";
 import "./styles.scss";
+
+//darkmode wasn't defined!
+const darkmode = false;
+
 
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-
+  const [test, setTest] = useLocalStorage('test', 'foo');
   useEffect(() => {
     axios
       .get(
